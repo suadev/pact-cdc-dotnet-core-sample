@@ -15,5 +15,11 @@ namespace Provider.Controllers
         {
             return Ok(Faker.GetProducts());
         }
+
+        [HttpGet("{id}")]
+        public ActionResult Get(int id)
+        {
+            return Ok(Faker.GetProducts().FirstOrDefault(q => q.Id == id));
+        }
     }
 }

@@ -16,6 +16,20 @@ namespace Consumer.Services
             _httpClient = httpClient;
         }
 
+        public async Task<ProductModel> GetProduct(long id)
+        {
+            using (var request = new HttpRequestMessage(HttpMethod.Get, $"products/{id}"))
+            {
+                var response = await _httpClient.SendAsync(request);
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<ProductModel>(content);
+                }
+                throw new Exception($"Product service connection error.Status Code: {response.StatusCode}");
+            }
+        }
+
         public async Task<List<ProductModel>> GetProducts()
         {
             using (var request = new HttpRequestMessage(HttpMethod.Get, "products"))

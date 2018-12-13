@@ -17,10 +17,17 @@ namespace Consumer.Controllers
         {
             _productHttpService = productHttpService;
         }
+
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             return Ok(await _productHttpService.GetProducts());
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return Ok(await _productHttpService.GetProduct(id));
         }
     }
 }

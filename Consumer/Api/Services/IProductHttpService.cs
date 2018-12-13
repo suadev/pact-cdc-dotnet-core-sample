@@ -7,5 +7,6 @@ namespace Consumer.Services
     public interface IProductHttpService
     {
         Task<List<ProductModel>> GetProducts();
+        Task<ProductModel> GetProduct(long id);
     }
 }
