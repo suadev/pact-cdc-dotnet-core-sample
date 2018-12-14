@@ -11,7 +11,7 @@ namespace Provider
                     new ProductModel
                     {
                         Id = 1,
-                        CategoryId =2,
+                        CategoryId = 2,
                         Name = "Printer",
                         UnitPrice = 200
                     },
