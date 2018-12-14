@@ -21,11 +21,11 @@ namespace Consumer.Test
             var pactConfig = new PactConfig
             {
                 SpecificationVersion = "2.0.0",
-                PactDir = @"..\..\..\..\..\contracts",
+                PactDir = @"..\..\..\..\..\pacts",
                 LogDir = @".\pact_logs"
             };
-            PactBuilder = new PactBuilder();
-            PactBuilder.ServiceConsumer("ConsumerMicroservice").HasPactWith("ProviderMicroservice");
+            PactBuilder = new PactBuilder(pactConfig);
+            PactBuilder.ServiceConsumer("Consumer").HasPactWith("Provider");
             MockProviderService = PactBuilder.MockService(MockServicePort);
         }
 

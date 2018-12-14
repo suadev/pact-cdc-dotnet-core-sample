@@ -12,7 +12,6 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />    
     <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="2.2.0" />   
     <PackageReference Include="Microsoft.AspNetCore.App" /> 
-
     <PackageReference Include="PactNet.OSX" Version="2.2.1" />
     <PackageReference Include="PactNet.Windows" Version="2.2.1" />
     <PackageReference Include="PactNet.Linux.x86" Version="2.2.1" />
